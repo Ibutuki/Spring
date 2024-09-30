@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seiryo.dao.DormitoryStudentDao">
+    <resultMap id="DormitoryStudentMap" type="com.seiryo.po.Dormitory">
+        <id property="d_id" column="d_id" />
+        <result property="s_dormitoryid" column="d_s_dormitoryid" />
+        <result property="d_dormbuilding" column="d_dormbuilding" />
+        <result property="d_bedtotal" column="d_bedtotal" />
+        <result property="d_bed" column="d_bed" />
+        <result property="a_name" column="a_name" />
+        <collection property="students" ofType="com.seiryo.po.Student">
+            <id property="s_id" column="s_id" />
+            <result property="s_studentid" column="s_studentid" />
+            <result property="s_name" column="s_name" />
+            <result property="s_sex" column="s_sex" />
+            <result property="s_age" column="s_age" />
+            <result property="s_phone" column="s_phone" />
+            <result property="s_classid" column="s_classid" />
+            <result property="s_classname" column="s_classname" />
+            <result property="s_dormitoryid" column="s_s_dormitoryid" />
+        </collection>
+    </resultMap>
+
+    <!-- 分页查询 -->
+    <select id="findDormitoryStudent" resultMap="DormitoryStudentMap">
+        SELECT
+            d.d_id AS d_id, 
+            d.s_dormitoryid AS d_s_dormitoryid, 
+            d.d_dormbuilding AS d_dormbuilding, 
+            d.d_bedtotal AS d_bedtotal, 
+            d.d_bed AS d_bed, 
+            d.a_name AS a_name,
+            s.s_id AS s_id, 
+            s.s_studentid AS s_studentid, 
+            s.s_name AS s_name, 
+            s.s_sex AS s_sex, 
+            s.s_age AS s_age, 
+            s.s_phone AS s_phone, 
+            s.s_classid AS s_classid, 
+            s.s_classname AS s_classname, 
+            s.s_dormitoryid AS s_s_dormitoryid
+        FROM
+            d_dormitoryinfo d
+        LEFT JOIN
+            d_student s ON d.s_dormitoryid = s.s_dormitoryid
+        <where>
+            <if test="s_dormitoryid != null and s_dormitoryid != 0">
+                AND s.s_dormitoryid LIKE '%' || #{s_dormitoryid} || '%'
+            </if>
+        </where>
+        ORDER BY d.d_id ASC
+    </select>
+</mapper>

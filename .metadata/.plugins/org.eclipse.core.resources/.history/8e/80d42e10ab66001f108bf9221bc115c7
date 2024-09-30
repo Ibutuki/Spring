@@ -1,0 +1,68 @@
+package com.wip.service.tutorial;
+
+import java.util.List;
+
+import com.github.pagehelper.PageInfo;
+import com.wip.dto.cond.ContentCond;
+import com.wip.dto.cond.TutorialCond;
+import com.wip.model.TutorialDomain;
+import com.wip.model.MetaDomain;
+
+/**
+ * 教程相关Service接口
+ */
+public interface TutorialService {
+    /***
+     * 添加教程
+     * @param TutorialDomain
+     */
+    void addTutorial(TutorialDomain TutorialDomain);
+
+    /**
+     * 根据编号获取教程
+     * @param tid
+     * @return
+     */
+    TutorialDomain getTutorialById(Integer tid);
+
+    /**
+     * 更新教程
+     * @param TutorialDomain
+     */
+    void updateTutorialById(TutorialDomain TutorialDomain);
+
+    /**
+     * 根据条件获取教程列表
+     * @param tutorialCond
+     * @param page
+     * @param limit
+     * @return
+     */
+    PageInfo<TutorialDomain> getTutorialByCond(TutorialCond tutorialCond, int page, int limit);
+
+    /**
+     * 删除教程
+     * @param cid
+     */
+    void deleteTutorialById(Integer cid);
+
+    /**
+     * 添加教程点击量
+     * @param content
+     */
+    void updateTutorialByCid(TutorialDomain content);
+
+    /**
+     * 通过分类获取教程
+     * @param category
+     * @return
+     */
+    List<TutorialDomain> getTutorialByCategory(String category);
+
+    /**
+     * 通过标签获取教程
+     * @param tags
+     * @return
+     */
+    List<TutorialDomain> getTutorialByTags(MetaDomain tags);
+}

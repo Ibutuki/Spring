@@ -1,0 +1,8 @@
+package com.wip.service.tutorial;
+
+/**
+ * 文章相关Service接口
+ */
+public class TutorialService {
+
+}

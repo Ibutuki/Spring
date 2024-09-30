@@ -1,0 +1,32 @@
+package com.wip.service.impl.test;
+
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.wip.service.site.impl.SiteServiceImpl;
+`
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SiteTest {
+	@Autowired
+	SiteServiceImpl siteServiceImpl;
+	public void getComments() {
+		siteServiceImpl.getComments(0);
+    }
+
+    @Test
+    public void getNewArticles() {
+    	siteServiceImpl.getNewArticles(0);
+    }
+
+    @Test
+    public void getStatistics() {
+    	siteServiceImpl.getStatistics();
+    }
+   
+}

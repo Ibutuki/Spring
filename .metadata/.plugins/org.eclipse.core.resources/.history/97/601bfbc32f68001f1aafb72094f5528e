@@ -1,0 +1,16 @@
+package com.wip.controller.admin;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+@Controller
+@RequestMapping("admin/test")
+public class TestController {
+    public TestController() {
+        System.out.println("TestController Loaded");
+    }
+	@RequestMapping("")
+	public String test() {
+		System.out.println("good!!!!!!!");
+		return "sucess";
+	}
+}

@@ -1,0 +1,100 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	LINE-HEIGHT: 130%;
+	margin-left: 0px;
+	margin-top: 30px;
+	margin-right: 0px;
+	margin-bottom: 0px
+}
+
+.disable{
+				oReadOnly: expression(this . readOnly = true);
+				background-color:#E8E7E6;
+			}
+
+table {
+	font-size: 12px;
+	color: #505050;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	empty-cells: show;
+	cellspacing: 1;
+	cellpadding: 4;
+	border: 1px solid #96C2F1;
+	text-align: center;
+}
+
+caption
+{
+	background-color: #D3D3D3;
+	font-family: 'Á¥Êי';
+	font-size: 18px;
+	line-height: 150%;
+}
+tr {
+	font-family: ËÎÌו;
+	font-size: 12px;
+	valign: top
+}
+
+td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #669999;
+	line-height: 130%;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px;
+}
+
+P {
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	LINE-HEIGHT: 130%
+}
+
+input,select {
+	font-size: 10pt;
+	BORDER: #96C2F1 1px solid;
+	FONT-FAMILY: verdana;
+}
+
+button {
+	font-size: 10pt;
+	HEIGHT: 20px;
+	background-color: #FFFFFF;
+	border-color: #CCCCCC
+}
+
+a:link {
+	color: #039;
+	text-decoration: none
+}
+
+a:visited {
+	color: #CC3366 ;
+	text-decoration: none
+}
+
+a:hover {
+	color: #f00;
+	text-decoration: underline
+}
+
+a:active {
+	color: #f00;
+	text-decoration: none
+}
+
+textarea {
+	BORDER-RIGHT: #A5ACB2 1px solid;
+	BORDER-TOP: #A5ACB2 1px solid;
+	FONT-SIZE: 12px;
+	BORDER-LEFT: #A5ACB2 1px solid;
+	COLOR: #000000;
+	BORDER-BOTTOM: #A5ACB2 1px solid;
+	FONT-FAMILY: "ËÎÌו";
+	BACKGROUND-COLOR: #ffffff
+}

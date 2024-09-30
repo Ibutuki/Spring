@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.DormCleanDao" >
+    <!--分页查询-->
+    <select id="getDormCleanList" parameterType="DormClean" resultType="DormClean">
+        select * from 
+	         (select a.*,rownum rnum from 
+		         (select * from d_dormgrade
+			        <where>
+			            <if test="d_dormbuilding!=null and d_dormbuilding!=''">
+			                and  d_dormbuilding like  '%${d_dormbuilding}%'
+			            </if>
+			            <if test="d_id!=null and d_id!=0">
+			                and  d_id like  '%${d_id}%'
+			            </if>
+			        </where>
+		        ORDER BY  g_id asc)
+		    a where rownum &lt;= #{pageSize}) 
+	    where rnum &gt; #{currentPage}
+    </select>
+    <!--查询数据总数-->
+    <select id="totalCount"  resultType="Integer">
+        select count(g_id) from d_dormgrade
+        <where>
+            <if test="d_dormbuilding!=null and d_dormbuilding!=''">
+                and  d_dormbuilding like  '%${d_dormbuilding}%'
+            </if>
+            <if test="d_id!=null and d_id!=0">
+                and  d_id like  '%${d_id}%'
+            </if>
+        </where>
+    </select>
+
+    <!--添加管理员信息-->
+    <insert id="addDormClean" parameterType="DormClean" keyProperty="g_id" useGeneratedKeys="false">
+        insert into d_dormgrade (d_id,d_dormbuilding,d_grade,create_time)
+        values(#{d_id},#{d_dormbuilding},#{d_grade},#{create_time})
+    </insert>
+
+    <!--通过id删除管理员信息-->
+    <delete id="deleteDormClean" parameterType="Integer" >
+        delete from d_dormgrade where g_id=#{g_id}
+    </delete>
+
+    <select id="findDormCleanById"  parameterType="Integer" resultType="DormClean" >
+        select * from d_dormgrade where g_id=#{g_id}
+    </select>
+
+    <select id="getAll" resultType="DormClean">
+        select * from d_dormgrade
+    </select>
+
+    <!--修改管理员信息-->
+    <update id="updateDormClean" parameterType="DormClean">
+        update d_dormgrade
+        <set>
+             <if test="d_dormbuilding!=null and d_dormbuilding!=''">
+                d_dormbuilding = #{d_dormbuilding},
+            </if>
+            <if test="d_id!=null and d_id!=0">
+                d_id = #{d_id},
+            </if>
+            <if test="d_grade!=null and d_grade!=''">
+                d_grade = #{d_grade},
+            </if>
+            <if test="update_time!=null and update_time!=''">
+                update_time = #{update_time},
+            </if>
+        </set>
+        where g_id = #{g_id}
+    </update>
+</mapper>

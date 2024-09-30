@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="com.seiryo.entity.ShopInfo" table="tb_shopInfo" >
+    		<id name="id" column="ID">
+    			<generator class="native"></generator>
+    		</id>
+    		<property name="shopId"></property>
+    		<property name="shopName"></property>
+    		<property name="price"></property>
+    		<property name="oldPrice"></property>
+    		<property name="descr"></property>
+    		<property name="insertDtm"></property>
+    	</class>
+</hibernate-mapping>

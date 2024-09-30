@@ -1,0 +1,38 @@
+package com.wip.service.impl.test;
+
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.wip.model.CommentDomain;
+import com.wip.service.comment.impl.CommentServiceImpl;
+
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class CommentTest {
+	@Autowired
+	CommentServiceImpl commentServiceImpl;
+	public void addComment() {
+		CommentDomain comment = new CommentDomain();
+		commentServiceImpl.addComment(comment);
+    }
+
+    
+    public void getCommentsByCId(Integer cid) {
+        
+    }
+
+    public void getCommentsByCond(CommentCond commentCond, int pageNum, int pageSize) {
+        
+    }
+
+    public void getCommentById(Integer coid) {
+    }
+
+    public void updateCommentStatus(Integer coid, String status) {
+    }
+
+    public void deleteComment(Integer coid) {
+    }
+}

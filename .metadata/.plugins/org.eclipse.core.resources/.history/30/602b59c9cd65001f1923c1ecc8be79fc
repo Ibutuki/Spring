@@ -1,0 +1,50 @@
+package com.wip.service.impl.test;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.wip.constant.ErrorConstant;
+import com.wip.exception.BusinessException;
+import com.wip.model.OptionsDomain;
+import com.wip.service.option.impl.OptionServiceImpl;
+
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class OptionTest {
+	@Autowired
+	OptionServiceImpl optionServiceImpl;
+	@Test
+	 public List<OptionsDomain> getOptions() {
+       
+    }
+
+    @Override
+    @Transactional
+    @CacheEvict(value = {"optionsCache", "optionCache"}, allEntries = true, beforeInvocation = true)
+    public void saveOptions(Map<String, String> options) {
+       
+    }
+
+    @Override
+    @Transactional
+    @CacheEvict(value = {"optionsCache", "optionCache"}, allEntries = true, beforeInvocation = true)
+    public void updateOptionByName(String name, String value) {
+       
+    }
+
+    @Override
+    @Cacheable(value = "optionCache", key = "'optionByname+' + #p0")
+    public OptionsDomain getOptionByName(String name) {
+       
+    }
+}

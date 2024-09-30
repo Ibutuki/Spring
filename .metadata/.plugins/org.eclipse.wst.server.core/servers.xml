@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/apache-tomcat-7.0.96 at localhost-config" hostname="localhost" id="apache-tomcat-7.0.96 at localhost" name="apache-tomcat-7.0.96 at localhost" runtime-id="D-_apache-tomcat-7.0.96" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="45" stop-timeout="15" testEnvironment="false" timestamp="18">
+    <list key="modules" value0="rental::org.eclipse.jst.jee.server:rental::jst.web::2.5"/>
+  </server>
+</servers>

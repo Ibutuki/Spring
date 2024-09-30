@@ -1,0 +1,35 @@
+package com.wip.service.impl.test;
+
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.github.pagehelper.PageHelper;
+import com.wip.constant.Types;
+import com.wip.dto.StatisticsDto;
+import com.wip.dto.cond.CommentCond;
+import com.wip.dto.cond.ContentCond;
+import com.wip.model.CommentDomain;
+import com.wip.model.ContentDomain;
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SiteTest {
+	
+	public void getComments() {
+      
+    }
+
+    @Test
+    public void getNewArticles() {
+       
+    }
+
+    @Test
+    public void getStatistics() {
+    }
+   
+}

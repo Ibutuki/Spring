@@ -1,0 +1,26 @@
+package com.wip.service.impl.test;
+
+
+
+public class CommentTest {
+	public void addComment(CommentDomain comments) {
+    }
+
+    
+    public void getCommentsByCId(Integer cid) {
+        
+    }
+
+    public void getCommentsByCond(CommentCond commentCond, int pageNum, int pageSize) {
+        
+    }
+
+    public void getCommentById(Integer coid) {
+    }
+
+    public void updateCommentStatus(Integer coid, String status) {
+    }
+
+    public void deleteComment(Integer coid) {
+    }
+}

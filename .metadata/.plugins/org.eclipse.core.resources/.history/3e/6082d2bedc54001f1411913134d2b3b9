@@ -1,0 +1,29 @@
+package com.seiryo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.seiryo.dao.ClassDao;
+import com.seiryo.po.Class;
+@Controller
+public class ClassController {
+	@Autowired
+	ClassServiceImpl classServiceImpl;
+	public String updateClass(Class cla) {
+		classDao.addClass(cla);
+	};
+	public String findClass() {
+		
+	};
+	//id查
+	public String  findClassById(Integer c_id) {
+		
+	};
+	public String  addClass(Class cla) {
+		
+	};
+	public String  deleteClass(Integer c_id);
+	
+}	

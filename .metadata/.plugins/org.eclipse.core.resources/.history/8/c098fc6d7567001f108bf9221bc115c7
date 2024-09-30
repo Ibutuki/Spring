@@ -1,0 +1,71 @@
+package com.wip.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.github.pagehelper.PageInfo;
+import com.wip.dto.cond.TutorialCond;
+import com.wip.model.MetaDomain;
+import com.wip.model.TutorialDomain;
+
+/**
+ * 教程相关Dao接口
+ */
+@Mapper
+public interface TutorialDao {
+	  /***
+     * 添加教程
+     * @param TutorialDomain
+     */
+    void addTutorial(TutorialDomain TutorialDomain);
+
+    /**
+     * 根据编号获取教程
+     * @param tid
+     * @return
+     */
+    TutorialDomain getTutorialById(Integer tid);
+
+    /**
+     * 更新教程
+     * @param TutorialDomain
+     */
+    void updateTutorialById(TutorialDomain TutorialDomain);
+
+    /**
+     * 根据条件获取教程列表
+     * @param tutorialCond
+     * @param page
+     * @param limit
+     * @return
+     */
+    List<TutorialDomain> getTutorialByCond(TutorialCond tutorialCond);
+
+    /**
+     * 删除教程
+     * @param tid
+     */
+    void deleteTutorialById(Integer tid);
+
+    /**
+     * 添加教程点击量
+     * @param tutorial
+     */
+    //这什么什么，mapper.xml没有
+    void updateTutorialByTid(TutorialDomain tutorial);
+
+    /**
+     * 通过分类获取教程
+     * @param category
+     * @return
+     */
+    List<TutorialDomain> getTutorialByCategory(String category);
+
+    /**
+     * 通过标签获取教程
+     * @param tags
+     * @return
+     */
+    List<TutorialDomain> getTutorialByTags(MetaDomain tags);
+}

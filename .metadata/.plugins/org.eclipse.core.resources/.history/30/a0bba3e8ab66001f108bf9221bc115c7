@@ -1,0 +1,61 @@
+package com.wip.service.tutorial.imp;
+
+import java.util.List;
+
+import com.github.pagehelper.PageInfo;
+import com.wip.dto.cond.TutorialCond;
+import com.wip.model.MetaDomain;
+import com.wip.model.TutorialDomain;
+import com.wip.service.tutorial.TutorialService;
+
+public class TutorialServiceImp implements TutorialService{
+
+	@Override
+	public void addTutorial(TutorialDomain TutorialDomain) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public TutorialDomain getTutorialById(Integer tid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateTutorialById(TutorialDomain TutorialDomain) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public PageInfo<TutorialDomain> getTutorialByCond(TutorialCond tutorialCond, int page, int limit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteTutorialById(Integer tid) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateTutorialByCid(TutorialDomain tutorial) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<TutorialDomain> getTutorialByCategory(String category) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TutorialDomain> getTutorialByTags(MetaDomain tags) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

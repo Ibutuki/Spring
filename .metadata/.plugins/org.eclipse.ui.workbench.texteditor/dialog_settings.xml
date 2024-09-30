@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="swagger"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="swagger"/>
+			<item value="tags"/>
+			<item value="allow"/>
+			<item value="Num"/>
+			<item value="tutorialNum"/>
+			<item value="/admin/tutorial"/>
+			<item value="status"/>
+			<item value="draft"/>
+			<item value="publish"/>
+			<item value="tid"/>
+			<item value="modify"/>
+			<item value="subTutorial"/>
+			<item value="subArticle"/>
+			<item value="cid"/>
+			<item value="articleForm"/>
+		</list>
+		<list key="replacehistory">
+			<item value="tid"/>
+			<item value="教程"/>
+			<item value="tutorials"/>
+			<item value="tutorialContent"/>
+			<item value="tutorialNum"/>
+			<item value="tutorialCache"/>
+			<item value="Tutorials"/>
+			<item value="tutorial"/>
+			<item value="CommentTutorialDomain"/>
+			<item value="RelationshipTutorialDomain"/>
+			<item value=""/>
+			<item value="Tutorial"/>
+			<item value="To"/>
+			<item value="TutorialDomain"/>
+			<item value="static"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1378"/>
+		<item key="DIALOG_Y_ORIGIN" value="455"/>
+		<item key="DIALOG_WIDTH" value="390"/>
+		<item key="DIALOG_HEIGHT" value="493"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|10.8|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
+	</section>
+</section>

@@ -1,0 +1,74 @@
+package com.wip.service.impl.test;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.wip.constant.ErrorConstant;
+import com.wip.constant.Types;
+import com.wip.constant.WebConst;
+import com.wip.dto.MetaDto;
+import com.wip.dto.cond.MetaCond;
+import com.wip.model.MetaDomain;
+import com.wip.service.meta.impl.MetaServiceImpl;
+
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class MetaTest {
+	@Autowired
+	MetaServiceImpl metaServiceImpl;
+	public void saveMeta() {
+		metaServiceImpl.saveMeta("a", "123", 1);
+    }
+
+    public void getMetaList() {
+    	metaServiceImpl.getMetaList("a", "123", 1)
+    }
+
+    public void addMetas() {
+    	MetaDomain metaDomain = new MetaDomain();
+    	metaDomain.setContentType("b");
+    	metaServiceImpl.addMea(metaDomain);
+    }
+
+    public void saveOrUpdate() {
+        
+
+    }
+
+    public void addMea() {
+       
+    }
+
+    public void updateMeta() {
+       
+    }
+
+    public void getMetasCountByType() {
+        
+    }
+
+    public void getMetaByName() {
+       
+    }
+
+    public void deleteMetaById() {
+        
+    }
+    private void reMeta() {
+        
+    }
+
+    public List<MetaDomain> getMetas(MetaCond metaCond) {
+        
+    }
+}

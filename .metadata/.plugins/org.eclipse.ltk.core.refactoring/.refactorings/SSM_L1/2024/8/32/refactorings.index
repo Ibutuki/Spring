@@ -1,0 +1,16 @@
+1722821180857	Move 'jsp' to 'WEB-INF'
+1722821185041	Move 'web.xml' to 'WEB-INF'
+1722837873764	Delete element
+1722841662343	Rename resource 'Spring.dao.xml'
+1722848967254	Delete element
+1722851315143	Move 'index.jsp' to 'WEB-INF'
+1722851317645	Move 'index.jsp' to 'webapp'
+1722857530469	Delete element
+1722866148086	Move files
+1722866156509	Rename resource 'log4j(1).properties'
+1722869479444	Copy packages
+1722871144618	Copy files
+1722871370454	Copy folder
+1722871373196	Copy file
+1722872204264	Copy file
+1722906393404	Copy file

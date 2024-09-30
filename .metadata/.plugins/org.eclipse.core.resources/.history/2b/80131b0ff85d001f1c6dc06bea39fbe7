@@ -1,0 +1,12 @@
+spring: 
+  datasource:
+    username: taobao
+    password: 123
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  sql:
+    init:
+      schema-locations: classpath:org/springframework/batch/core/schema-oracle6.sql
+      mode: always
+      #mode: never
+  

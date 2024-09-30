@@ -1,0 +1,55 @@
+package com.wip.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import com.wip.model.RelationShipDomain;
+/**
+ * 教程和项目关联表
+ */
+@Mapper
+public interface RelationshipTutorialDao {
+
+    /**
+     * 根据meta编号获取关联
+     * @param mid
+     * @return
+     */
+    List<RelationShipDomain> getRelationShipByMid(Integer mid);
+
+    /**
+     * 根据meta编号删除关联
+     * @param mid
+     */
+    void deleteRelationShipByMid(Integer mid);
+
+    /**
+     * 获取数量
+     * @param tid
+     * @param mid
+     * @return
+     */
+    Long getCountById(@Param("tid") Integer tid, @Param("mid") Integer mid);
+
+    /**
+     * 添加
+     * @param relationShip
+     * @return
+     */
+    int addRelationShip(RelationShipDomain relationShip);
+
+    /**
+     * 根据教程编号删除关联
+     * @param tid
+     */
+    void deleteRelationShipBytid(int tid);
+
+    /**
+     * 根据教程ID获取关联
+     * @param tid
+     */
+    List<RelationShipDomain> getRelationShipBytid(Integer tid);
+
+}

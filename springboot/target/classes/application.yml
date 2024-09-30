@@ -1,0 +1,12 @@
+user:
+ name: 哈哈哈哈
+ pwd: 321
+ maps: 
+   k1: v1
+   k2: v2
+ lists:
+   - code
+   - girl
+   - music
+ dog: 
+  name: 悠悠

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.CustomerMapper">
+	
+	<!-- IDによる検索する -->
+	<select id="getCustomerById" parameterType="String" resultType="Customer">
+	    SELECT mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+		FROM customer WHERE mem_id = #{memId} ORDER BY mem_id
+	</select>
+	
+	<!-- すべての会員情報を検索する -->
+	<select id="getAllCustomers" resultType="Customer">
+		SELECT mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+      	FROM customer ORDER BY mem_id
+	</select>
+	
+	<!-- 入力された条件で会員情報を検索する -->
+	<select id="getCustomerList" resultType="Customer">
+		SELECT mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+      	FROM customer
+      	<where>
+		    <if test="memId != null and memId != '' ">
+		        AND mem_id = #{memId}
+		    </if>
+		    <if test="lastname != null and lastname != ''">
+		        AND lastname LIKE '%' || #{lastname} || '%'
+		    </if>
+		    <if test="lastkana != null and lastkana != ''">
+		        AND lastkana LIKE '%' || #{lastkana} || '%'
+		    </if>
+		    <if test="firstname != null and firstname != ''">
+		        AND firstname LIKE '%' || #{firstname} || '%'
+		    </if>
+		    <if test="firstkana != null and firstkana != ''">
+		        AND firstkana LIKE '%' || #{firstkana} || '%'
+		    </if>
+		</where>
+		ORDER BY mem_id
+	</select>
+	
+	<!-- 会員情報を登録する -->
+	<insert id="insertCustomer" useGeneratedKeys="true" keyProperty="memId">
+		INSERT INTO customer(
+			lastname, lastkana, firstname, firstkana, birthdate, 
+    		post, addr1, addr2, addr3, tel1, tel2, tel3, password, id_flag, 
+    		apply_date, expiry_date, del_flag
+		)
+		VALUES(
+			#{lastname},
+		    #{lastkana},
+		    #{firstname},
+		    #{firstkana},
+		    to_date(#{birthdate},'yyyy-mm-dd'),
+		    #{post},
+		    #{addr1},
+		    #{addr2},
+		    #{addr3},
+		    #{tel1},
+		    #{tel2},
+		    #{tel3},
+		    #{password},
+		    #{idFlag},
+		    to_date(#{applyDate},'yyyy-mm-dd'),
+		    to_date(#{expiryDate},'yyyy-mm-dd'),
+		    #{delFlag}
+		)
+		<selectKey keyProperty="memId" resultType="String" order="AFTER">
+		    SELECT TO_CHAR(customer_seq.currval, 'FM00000000') AS memId FROM DUAL
+		</selectKey>
+	</insert>
+	
+	<!-- 会員情報を更新する -->
+	<update id="updateCustomer">
+		UPDATE customer
+		SET 
+		    lastname = #{lastname},
+		    lastkana = #{lastkana},
+		    firstname = #{firstname},
+		    firstkana = #{firstkana},
+		    birthdate = to_date(#{birthdate},'yyyy-mm-dd'),
+		    post = #{post},
+		    addr1 = #{addr1},
+		    addr2 = #{addr2},
+		    addr3 = #{addr3},
+		    tel1 = #{tel1},
+		    tel2 = #{tel2},
+		    tel3 = #{tel3},
+		    password = #{password},
+		    id_flag = #{idFlag},
+		    apply_date = to_date(#{applyDate},'yyyy-mm-dd'),
+		    expiry_date = to_date(#{expiryDate},'yyyy-mm-dd')
+		WHERE mem_id = #{memId}
+	</update>
+	
+	<!-- 退会処理 -->
+	<update id="cancelCustomer" parameterType="String">
+		UPDATE customer
+		SET 
+	        expiry_date = TRUNC(SYSDATE),
+	        del_flag = 1
+	    WHERE mem_id = #{memId}
+	</update>
+	
+</mapper>

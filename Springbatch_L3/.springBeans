@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.11.201912160804-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>java:com.edu.seiryo.entity.StepListenerJob</config>
+		<config>java:com.edu.seiryo.entity.RepeatJob</config>
+		<config>java:com.edu.seiryo.entity.MultiStepJob</config>
+		<config>java:com.edu.seiryo.entity.ExecutionContextJob</config>
+		<config>java:com.edu.seiryo.entity.ChunkTaskletJob</config>
+		<config>java:com.edu.seiryo.entity.FlowStepJob</config>
+		<config>java:com.edu.seiryo.entity.StatusStepJob</config>
+	</configs>
+	<autoconfigs>
+		<config>java:com.edu.seiryo3.MapperFlatReaderJob</config>
+		<config>java:com.edu.seiryo3.CursorDBReaderJob</config>
+		<config>java:com.edu.seiryo3.FlatReaderJob</config>
+		<config>java:com.edu.seiryo3.JsonFlatReaderJob</config>
+		<config>java:com.edu.seiryo3.ValidationProcessorJob</config>
+		<config>java:com.edu.seiryo3.PageDBReaderJob</config>
+		<config>java:com.edu.seiryo3.CompositeWriteJob</config>
+		<config>java:com.edu.seiryo3.FlatWriteJob</config>
+		<config>java:com.edu.seiryo3.JdbcWriteJob</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

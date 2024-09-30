@@ -1,0 +1,16 @@
+spring: 
+ datasource: 
+  username: root
+  password: 123456
+  url: jdbc:mysql://127.0.0.1:3306/springbatch?serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+  driver-class-name: com.mysql.cj.jdbc.Driver
+ batch: 
+  job: 
+   enabled: false
+mybatis: 
+ configuration: 
+  default-executor-type: batch
+ mapper-locations: classpath*:com/edu/seiryo/mapper/EmpolyeeMapper.xml
+job:  
+ data: 
+  path: D:/spring-batch-example/

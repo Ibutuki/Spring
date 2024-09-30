@@ -1,0 +1,58 @@
+package com.seiryo.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.seiryo.dao.StudentDao;
+import com.seiryo.po.PageInfo;
+import com.seiryo.po.Student;
+import com.seiryo.service.StudentService;
+
+public class StudentServiceImpl implements StudentService{
+	@Autowired
+	StudentDao studentDao;
+	@Override
+	public Student findStudent(Student student) {
+		// TODO Auto-generated method stub
+		return studentDao.findStudent(student);
+	}
+
+	@Override
+	public int addAdmin(Student student) {
+		// TODO Auto-generated method stub
+		return studentDao.addAdmin(student);
+	}
+
+	@Override
+	public int deleteAdmin(Integer a_id) {
+		// TODO Auto-generated method stub
+		return studentDao.deleteAdmin(a_id);
+	}
+
+	@Override
+	public int updateAdmin(Student student) {
+		// TODO Auto-generated method stub
+		return studentDao.updateAdmin(student);
+	}
+
+	@Override
+	public Student findAdminById(Integer a_id) {
+		// TODO Auto-generated method stub
+		return studentDao.findAdminById(a_id);
+	}
+
+	@Override
+	public List<Student> getAll() {
+		// TODO Auto-generated method stub
+		return studentDao.getAll();
+	}
+
+	@Override
+	public PageInfo<Student> findPageInfo(String s_name, Integer s_studentid, Integer s_classname,
+			Integer currentPage, Integer pageSize) {
+		// TODO Auto-generated method stub
+		return studentDao;
+	}
+
+}

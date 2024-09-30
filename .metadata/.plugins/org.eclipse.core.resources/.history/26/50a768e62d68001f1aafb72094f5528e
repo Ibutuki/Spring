@@ -1,0 +1,11 @@
+package com.wip.controller.admin;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("admin/test")
+public class TestController {
+	@RequestMapping("")
+	public String test() {
+		System.out.println();
+	}
+}

@@ -1,0 +1,39 @@
+package com.wip.service.impl.test;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.swing.Spring;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import com.wip.service.option.impl.OptionServiceImpl;
+
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class OptionTest {
+	@Autowired
+	OptionServiceImpl optionServiceImpl;
+	@Test
+	public void getOptions() {
+		optionServiceImpl.getOptions();
+    }
+	@Test
+    public void saveOptions() {
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("a", "123");
+		optionServiceImpl.saveOptions(map);
+    }
+	@Test
+    public void updateOptionByName() {
+		optionServiceImpl.updateOptionByName("123", "123");
+    }
+	@Test
+    public void getOptionByName() {
+		optionServiceImpl.getOptionByName("123");
+    }
+}

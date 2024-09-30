@@ -1,0 +1,17 @@
+package com.wip.model;
+/**
+ * 教程关联信息表
+ */
+public class RelationshipTutorialDomain {
+
+    /**
+     * 教程主键
+     */
+    private Integer tid;
+
+    /**
+     * 项目编号
+     */
+    private Integer mid;
+
+}

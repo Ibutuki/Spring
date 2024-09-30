@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+<constant name="struts.devMode" value="true" />
+	<package name="/" extends="struts-default" namespace="/">
+		<action name="ShopInfoAction_*" method="{1}" class="com.seiryo.action.ShopInfoAction">
+			<result name="shop">/Shop.jsp</result>
+			<result name="car">/car.jsp</result>
+		</action>
+		<action name="CarAction_*" class="com.seiryo.action.CarAction" method="{1}">
+			<result name="success">/success.jsp</result>
+			<result name="car">/car.jsp</result>
+		</action>
+		<action name="OrderAction_*" class="com.seiryo.action.OrderAction" method="{1}">
+			<result name="admin">/admin.jsp</result>
+			<result name="car">/car.jsp</result>
+		</action>
+		<action name="UserAction_*" class="com.seiryo.action.UserAction" method="{1}">
+			<result name="admin" type="redirectAction">
+				<param name="actionName">OrderAction_inite</param>
+			</result>
+			<result name="login">/login.jsp</result>
+		</action>
+	</package>
+</struts>

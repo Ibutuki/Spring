@@ -1,0 +1,62 @@
+package com.wip.service.impl.test;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.wip.constant.ErrorConstant;
+import com.wip.constant.Types;
+import com.wip.constant.WebConst;
+import com.wip.dto.MetaDto;
+import com.wip.dto.cond.MetaCond;
+
+public class MetaTest {
+	public void saveMeta() {
+        
+    }
+
+    public void getMetaList() {
+       
+    }
+
+    public void addMetas() {
+        
+    }
+
+    public void saveOrUpdate() {
+        
+
+    }
+
+    public void addMea() {
+       
+    }
+
+    public void updateMeta() {
+       
+    }
+
+    public Long getMetasCountByType(String type) {
+        
+    }
+
+    public MetaDomain getMetaByName(String type, String name) {
+       
+    }
+
+    public void deleteMetaById(Integer mid) {
+        
+    }
+    private String reMeta(String name, String metas) {
+        
+    }
+
+    public List<MetaDomain> getMetas(MetaCond metaCond) {
+        
+    }
+}

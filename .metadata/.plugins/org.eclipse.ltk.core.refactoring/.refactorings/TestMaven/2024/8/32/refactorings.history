@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;pom.xml&apos; to &apos;TestMaven&apos;" description="Move &apos;pom.xml&apos; to &apos;TestMaven&apos;" destination="/TestMaven" element1="src/pom.xml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1722782006050" updateReferences="true"/>
+</session>

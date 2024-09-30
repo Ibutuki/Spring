@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.ClassDao" >
+
+
+    <!--分页查询-->
+    <select id="getClassList" parameterType="Class" resultType="Class">
+         select * from 
+	         (select a.*,rownum rnum from 
+		         (select * from d_class
+			        <where>
+			            <if test="c_classid!=null and c_classid!=0 ">
+			                and  c_classid like  '%${c_classid}%'
+			            </if>
+			            <if test="c_classname!=null and c_classname!=''">
+			                and  c_classname like  '%${c_classname}%'
+			            </if>
+			            <if test="c_counsellor!=null and c_counsellor!=''">
+			                and  c_counsellor like  '%${c_counsellor}%'
+			            </if>
+			        </where>
+		        ORDER BY  c_id asc)
+		    a where rownum &lt;= #{pageSize}) 
+	    where rnum &gt; #{currentPage}
+    </select>
+    <!--查询数据总数-->
+    <select id="totalCount"  resultType="Integer">
+        select count(c_id) from d_class
+        <where>
+             <if test="c_classid!=null and c_classid!=0 ">
+                and  c_classid like  '%${c_classid}%'
+            </if>
+            <if test="c_classname!=null and c_classname!=''">
+                and  c_classname like  '%${c_classname}%'
+            </if>
+            <if test="c_counsellor!=null and c_counsellor!=''">
+                and  c_counsellor like  '%${c_counsellor}%'
+            </if>
+        </where>
+    </select>
+
+    <!--添加管理员信息-->
+    <insert id="addClass" parameterType="Class" keyProperty="c_id" useGeneratedKeys="false">
+        insert into d_class (c_classid, c_classname,c_counsellor)
+        values(#{c_classid},#{c_classname},#{c_counsellor})
+    </insert>
+
+    <!--通过id删除管理员信息-->
+    <delete id="deleteClass" parameterType="Integer" >
+        delete from d_class where c_id=#{c_id}
+    </delete>
+
+    <select id="findClassById"  parameterType="Integer" resultType="Class" >
+        select * from d_class where c_id=#{c_id}
+    </select>
+
+    <select id="getAll" resultType="Class">
+        select * from d_class
+    </select>
+
+    <!--修改管理员信息-->
+    <update id="updateClass" parameterType="Admin">
+        update d_class
+        <set>
+            <if test="c_classid!=null and c_classid !=0">
+                c_classid=#{c_classid},
+            </if>
+            <if test="c_classname !=null and c_classname !=''">
+                c_classname=#{c_classname},
+            </if>
+            <if test="c_counsellor !=null and c_counsellor !=''">
+                c_counsellor=#{c_counsellor},
+            </if>
+        </set>
+        where c_id = #{c_id}
+    </update>
+</mapper>

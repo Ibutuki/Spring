@@ -1,0 +1,43 @@
+package com.wip.service.impl.test;
+
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.wip.dto.cond.CommentCond;
+import com.wip.model.CommentDomain;
+import com.wip.service.comment.impl.CommentServiceImpl;
+
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class CommentTest {
+	@Autowired
+	CommentServiceImpl commentServiceImpl;
+	public void addComment() {
+		CommentDomain comment = new CommentDomain();
+		commentServiceImpl.addComment(comment);
+    }
+
+    
+    public void getCommentsByCId() {
+    	commentServiceImpl.getCommentById(2);
+    }
+
+    public void getCommentsByCond() {
+    	CommentCond commentCond = new CommentCond();
+    	commentCond.setEndTime(1);
+    	commentServiceImpl.getCommentsByCond(commentCond, 1, 1);
+    }
+
+    public void getCommentById() {
+    	commentServiceImpl.getCommentById(1);
+    }
+
+    public void updateCommentStatus() {
+    	commentServiceImpl.updateCommentStatus(1, "123");
+    }
+
+    public void deleteComment(Integer coid) {
+    }
+}

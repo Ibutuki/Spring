@@ -1,0 +1,5 @@
+package com.wip.service.tutorial.imp;
+
+public class TutorialServiceImp implements TutorialService{
+
+}

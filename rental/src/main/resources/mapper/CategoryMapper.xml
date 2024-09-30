@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.CategoryMapper">
+	<!-- IDによる検索する -->
+	<select id="getCategoryById" parameterType="String" resultType="Category">
+		SELECT category_cd, category
+		FROM category WHERE category_cd = #{categoryCd}
+	</select>
+	
+	<!-- すべてのカテゴリー情報を検索する -->
+	<select id="getCategoryList" resultType="Category">
+		SELECT category_cd, category
+      	FROM category ORDER BY category_cd
+	</select>
+</mapper>

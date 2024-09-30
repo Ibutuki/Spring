@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Aug 30 14:13:13 CST 2024
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\95711\\.m2\\repository\\org\\springframework\\spring-web\\5.1.7.RELEASE\\spring-web-5.1.7.RELEASE.jar=D\:\\apache-tomcat-7.0.96\\webapps\\rental\\WEB-INF\\lib\\spring-web-5.1.7.RELEASE.jar
+org.eclipse.jst.jee.server\:rental=D\:\\apache-tomcat-7.0.96\\webapps\\rental
